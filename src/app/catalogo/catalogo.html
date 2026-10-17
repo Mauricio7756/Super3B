@@ -1,0 +1,50 @@
+<section id="productos" class="catalogo">
+  <header class="encabezado">
+    <span class="sobrelinea">EL SÚPER DE TODOS LOS DÍAS</span>
+    <h2>Productos para llenar tu hogar de cosas buenas</h2>
+    <p>
+      Explora una selección para tu despensa y tu día a día. Catálogo de demostración; precios de
+      referencia en USD.
+    </p>
+  </header>
+
+  @if (cargando()) {
+    <div class="estado">
+      <mat-spinner diameter="45"></mat-spinner>
+      <p>Buscando productos para ti...</p>
+    </div>
+  }
+
+  @if (error(); as mensajeError) {
+    <p class="error">{{ mensajeError }}</p>
+  }
+
+  @if (!cargando() && !error()) {
+    <div class="rejilla">
+      @for (producto of productos(); track producto.id) {
+        <mat-card class="producto">
+          <img mat-card-image [src]="producto.image" [alt]="producto.title" loading="lazy" />
+
+          <mat-card-content>
+            <span class="categoria">{{ producto.category }}</span>
+            <h2>{{ producto.title }}</h2>
+            <p class="descripcion">{{ producto.description }}</p>
+
+            <p class="precio">{{ producto.price | currency: 'USD' : 'symbol' : '1.2-2' }}</p>
+            <p class="valoracion">★ {{ producto.rating | number: '1.1-1' }}</p>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <a mat-flat-button href="#categorias" [attr.aria-label]="'Explora los departamentos'">
+              Ver departamentos
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+
+    @if (productos().length === 0) {
+      <p class="sin-productos">No hay productos disponibles por el momento.</p>
+    }
+  }
+</section>

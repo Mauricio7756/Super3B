@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #25352d;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fbfaf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 38px 20px;
+  background: #174b35;
+  color: #e8f0e9;
+  text-align: center;
+}
+
+.footer p {
+  margin: 7px 0;
+}
+
+.footer-logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.footer-logo span {
+  color: #ffd44f;
+}
+
+.footer a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ffd44f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 18px 12px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,262 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: clamp(36px, 7vw, 82px);
+  max-width: 1320px;
+  margin: auto;
+  padding: clamp(64px, 8vw, 100px) 6%;
+  overflow: hidden;
+}
+
+.contenido {
+  min-width: 0;
+}
+
+.contenido h1 {
+  margin: 20px 0;
+  color: #174b35;
+  font-size: clamp(2.65rem, 5vw, 4.65rem);
+  letter-spacing: -0.06em;
+  line-height: 1.06;
+}
+
+.contenido h1 span {
+  color: #ed6b35;
+}
+
+.contenido p {
+  max-width: 560px;
+  margin: 0 0 30px;
+  color: #596a60;
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #236648;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.etiqueta span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ed6b35;
+  box-shadow: 0 0 14px #ed6b3566;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse at 48% 50%, #ffffff 0 25%, transparent 25.5%),
+    linear-gradient(145deg, #dff1dc, #c8e4c7 56%, #b7d9b3);
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #ffffff8c;
+  border-radius: 50%;
+  content: '';
+}
+
+.hero-visual::after {
+  width: 320px;
+  height: 320px;
+}
+
+.producto-visual {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 100px;
+  height: 100px;
+  place-items: center;
+  border: 5px solid #fff;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 15px 30px #174b3522;
+  font-size: 3.2rem;
+}
+
+.producto-grande {
+  width: 142px;
+  height: 142px;
+  font-size: 5rem;
+}
+
+.producto-fruta {
+  top: 17%;
+  left: 15%;
+  transform: rotate(-9deg);
+}
+
+.producto-leche {
+  top: 21%;
+  right: 13%;
+  transform: rotate(8deg);
+}
+
+.producto-pan {
+  right: 18%;
+  bottom: 15%;
+  transform: rotate(9deg);
+}
+
+.sello {
+  position: absolute;
+  z-index: 2;
+  top: 8%;
+  right: 8%;
+  display: grid;
+  width: 80px;
+  height: 80px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ed6b35;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.mensaje-visual {
+  position: absolute;
+  z-index: 2;
+  right: 9%;
+  bottom: 8%;
+  left: 9%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 17px 20px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 25px #174b3517;
+}
+
+.mensaje-visual span {
+  color: #728074;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.mensaje-visual strong {
+  color: #174b35;
+  font-size: 1.25rem;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 9px;
+  background: #ed6b35;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  background: #d95725;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.enlace-secundario {
+  color: #174b35;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enlace-secundario:hover {
+  color: #ed6b35;
+}
+
+.categorias-rapidas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 38px;
+}
+
+.categorias-rapidas span {
+  padding: 8px 11px;
+  border: 1px solid #d9e2d8;
+  border-radius: 999px;
+  background: #fff;
+  color: #56685d;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 62px 6%;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contenido h1 {
+    font-size: clamp(2.4rem, 12vw, 3.2rem);
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .producto-visual {
+    width: 78px;
+    height: 78px;
+    font-size: 2.5rem;
+  }
+
+  .producto-grande {
+    width: 112px;
+    height: 112px;
+    font-size: 4rem;
+  }
+
+  .mensaje-visual {
+    right: 6%;
+    left: 6%;
+  }
+
+  .mensaje-visual strong {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,134 @@
+.informacion {
+  padding: clamp(64px, 8vw, 100px) 6%;
+  background: #f4f5ed;
+}
+
+.encabezado-seccion {
+  max-width: 700px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.sobrelinea,
+.numero {
+  color: #ed6b35;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.informacion h2,
+.por-que h2 {
+  margin: 12px 0;
+  color: #174b35;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.descripcion {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: #66756b;
+  line-height: 1.7;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1320px;
+  margin: auto;
+}
+
+.tarjeta {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  border: 1px solid #e4e7dd;
+  border-radius: 14px;
+  background: #fff;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px #174b3512;
+}
+
+.tarjeta-destacada {
+  border-color: #c9dfc6;
+  background: linear-gradient(145deg, #e5f2df, #fff 68%);
+}
+
+.icono {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin: 24px 0 12px;
+  place-items: center;
+  border-radius: 12px;
+  background: #eff4e8;
+  color: #174b35;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.tarjeta h3 {
+  margin: 0 0 9px;
+  color: #263a2e;
+  font-size: 1.2rem;
+}
+
+.tarjeta p {
+  margin: 0 0 20px;
+  color: #66756b;
+  line-height: 1.6;
+}
+
+.por-que {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  align-items: center;
+  gap: 48px;
+  padding: 68px 10%;
+  background: #e5f2df;
+}
+
+.por-que h2 {
+  margin-bottom: 0;
+}
+
+.por-que > p {
+  max-width: 510px;
+  margin: 0;
+  color: #53645a;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .por-que {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 56px 6%;
+  }
+}
+
+@media (max-width: 560px) {
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta {
+    min-height: 250px;
+  }
+}
